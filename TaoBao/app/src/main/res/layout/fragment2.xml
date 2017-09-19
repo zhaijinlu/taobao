@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/frag1_top"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="分类"
+            android:padding="10dp"
+            android:textColor="#fff"
+            android:layout_centerInParent="true"
+            android:textSize="23sp"
+            />
+        <ImageView
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_action_add"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:id="@+id/txl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="通讯录"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:clickable="true"
+            android:padding="10dp"
+            android:layout_toLeftOf="@+id/add"
+            android:layout_centerVertical="true"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        >
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/cotegoryRecyclerview"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            ></android.support.v7.widget.RecyclerView>
+        <FrameLayout
+            android:id="@+id/framelayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="8"
+            ></FrameLayout>
+
+    </LinearLayout>
+</LinearLayout>
