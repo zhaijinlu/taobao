@@ -11,8 +11,20 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    signingConfigs {
+        release {//C:\Users\vcc\keystore.jks
+            storeFile file("D:\\Aandroidstudio\\tbkeystore.jks")//keystore的路径
+            storePassword "123456"
+            keyAlias "bw"
+            keyPassword "123456"
+        }
+        debug {
+        }
+    }
+
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -20,11 +32,25 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    compile files('libs/gson-2.2.4.jar')
+    compile project(':okhttp3')
+    compile project(':recyclerviewdecoration')
+    compile project(':zxinglite')
+    compile files('libs/AMap_Location_V3.5.0_20170731.jar')
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'org.xutils:xutils:3.3.36'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'com.youth.banner:banner:1.4.9'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.yalantis:phoenix:1.2.3'
+    compile 'com.squareup.picasso:picasso:2.5.1'
+    compile 'com.loopj.android:android-async-http:1.4.9'
     testCompile 'junit:junit:4.12'
+    compile files('libs/alipaySdk-20160516.jar')
 }
